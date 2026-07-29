@@ -43,7 +43,7 @@ aside {
 .features_app {
     display: flex;
     justify-content: center;
-    height: 65vh;
+    height: 65%;
 }
 
 .features_app>ul {
@@ -55,18 +55,33 @@ aside {
 }
 
 .features_app>ul>li {
+    display: flex;
+    justify-content: center;
     margin-top: 25%;
+    width: 100%;
+}
+
+.features_app>ul>li> :nth-child(n) {
+    margin-right: 5%;
 }
 
 
 /* parte do logout */
 
 .logout {
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    height: 20%;
+    height: 15%;
     width: 100%;
-    background-color: tomato;
-    border-top: black 2px solid;
+    border-top: black 3px solid;
+}
+
+.logout>div {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.logout>div> :nth-child(n) {
+    margin-top: auto;
+    margin-right: 5%;
+    margin-bottom: 5%;
 }
