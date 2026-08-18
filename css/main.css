@@ -1,9 +1,8 @@
 /* budget data */
 
 .budget {
-    border: solid black 1px;
     height: 50%;
-    background-color: white;
+    border-bottom: 5px solid black;
 }
 
 .budget_content {
@@ -57,5 +56,54 @@
 /* data showup */
 
 .data {
-    background-color: azure;
+    height: 50%;
+}
+
+.data_content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.data_info {
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+    width: 40%;
+}
+
+.data_info:nth-child(1) {
+    width: 60%;
+}
+
+.data_info_content {
+    background-color: rgb(226, 226, 226);
+    box-shadow: 5px 8px 5px rgb(63, 62, 62);
+    border-radius: 2%;
+    border: 3px solid black;
+    width: 80%;
+    height: 90%;
+}
+
+.budget_info_content,
+.data_info_content {
+    background: linear-gradient( 145deg, #164b63 0%, #123e54 55%, #0e3347 100%);
+    border: 1px solid rgba(120, 190, 215, 0.35);
+    border-radius: 16px;
+    color: #f2f9fc;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: 0.25s ease;
+}
+
+.budget_info_content:hover,
+.data_info_content:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    border-color: rgba(120, 190, 215, 0.6);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(70, 160, 195, 0.12);
+}
+
+.budget_info_content>p {
+    padding: 1%;
 }
