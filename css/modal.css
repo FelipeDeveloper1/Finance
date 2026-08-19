@@ -1,0 +1,29 @@
+.salaryModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    width: min(90%, 600px);
+    min-height: 300px;
+    padding: clamp(2rem, 5vw, 3rem);
+    box-sizing: border-box;
+    border: 1px solid rgba(120, 190, 215, 0.35);
+    border-radius: 20px;
+    background: linear-gradient( 145deg, #164b63 0%, #123e54 55%, #0e3347 100%);
+    color: #f1f8fa;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transform: translate(-50%, -50%);
+}
+
+
+/* Camada de fundo */
+
+.salaryModal::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: rgba(1, 6, 9, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
