@@ -1,48 +1,57 @@
-// variaveis 
-const insertSalario = document.querySelector('.btn_salario')
-
-
-// Funções
-ModalSalario = () => {
-    // variaveis
-
-    // Modal & Body
-    const body = document.querySelector("body")
-    const salarioModal = document.createElement("div")
-    const contentModal = document.createElement("div")
-
-
-    // Content
-    const content = {
-        close: document.createElement("span"),
-        salarioModalText: document.createTextNode("Adicione o seu salario: "),
-        salarioModalTextBox: document.createElement("input"),
-        comissaoModalText: document.createTextNode("Adcione comissão: "),
-        comissaoModalTextBox: document.createElement("input"),
-        submit: document.createElement("input"),
+class SalaryModal {
+    constructor(ButtonSalario, body) {
+        // Variables
+        this.ButtonSalario = document.querySelector(ButtonSalario)
+        this.body = document.querySelector(body)
+        this.salarioModal = document.createElement("div")
     }
 
+    // functions
+    criar = () => {
+        // Creating Modal 
+        const contentModal = document.createElement("div")
+
+        // Content Modal Object
+        const content = {
+            close: document.createElement("span"),
+            salarioModalText: document.createTextNode("Adicione o seu salario: "),
+            salarioModalTextBox: document.createElement("input"),
+            comissaoModalText: document.createTextNode("Adcione comissão: "),
+            comissaoModalTextBox: document.createElement("input"),
+            submit: document.createElement("input"),
+        }
+
+        // insert data on values
+        content.salarioModalTextBox.type = "text"
+        content.close.textContent = "X"
+        content.submit.type = "submit"
 
 
-    // inserção de conteúdo das divs criadas
-    content.salarioModalTextBox.type = "text"
-    content.close.textContent = "X"
-    content.submit.type = "submit"
+        // inserting the content on Modal 
 
-    // inserção nas respectivas divs
-    body.appendChild(salarioModal)
-    salarioModal.appendChild(contentModal)
-    Object.values(content).forEach((data) => {
-        contentModal.appendChild(data)
-    })
+        Object.values(content).forEach((data) => {
+            contentModal.appendChild(data)
+        })
 
-    // inserção de classes (estilazação)
-    salarioModal.classList.add("salaryModal")
-    contentModal.classList.add("contentModal")
-        // console.log(content)
+        this.body.appendChild(this.salarioModal)
+        this.salarioModal.appendChild(contentModal)
+
+
+        // inserting style on content
+
+        this.salarioModal.classList.add("salaryModal")
+        contentModal.classList.add("contentModal")
+    }
+
+    // addEventListener
+    open = () => {
+        this.criar()
+    }
+
 }
 
-// EventListener
-insertSalario.addEventListener('click', () => {
-    ModalSalario()
+
+const Modal = new SalaryModal('.btn_salario', 'body')
+Modal.ButtonSalario.addEventListener('click', () => {
+    Modal.open()
 })
