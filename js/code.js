@@ -4,6 +4,7 @@ class SalaryModal {
         this.ButtonSalario = document.querySelector(ButtonSalario)
         this.body = document.querySelector(body)
         this.salarioModal = document.createElement("div")
+
     }
 
     // functions
@@ -41,17 +42,31 @@ class SalaryModal {
 
         this.salarioModal.classList.add("salaryModal")
         contentModal.classList.add("contentModal")
+
+        // eventListener
+        content.close.addEventListener('click', () => {
+            this.fechar()
+        })
     }
 
-    // addEventListener
     open = () => {
         this.criar()
     }
 
+    fechar = () => {
+        this.salarioModal.remove()
+    }
 }
+
+// addEventListener
+
+
+
+
 
 
 const Modal = new SalaryModal('.btn_salario', 'body')
 Modal.ButtonSalario.addEventListener('click', () => {
     Modal.open()
+    console.log(Modal)
 })
